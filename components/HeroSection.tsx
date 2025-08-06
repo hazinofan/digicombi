@@ -5,7 +5,7 @@ import React from "react";
 export default function AboutSection() {
   return (
     <section className="py-20 transition-colors duration-300">
-  <div className="max-w-7xl mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-20">
+  <div className="mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-20">
     {/* Left: Big GIF */}
     <div className="w-full md:w-1/2 flex justify-center">
       {/* on mobile ~300px, on md+ ~600px */}

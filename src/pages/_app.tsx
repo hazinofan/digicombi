@@ -17,7 +17,6 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      {/* 3) Wrap your entire app in the Inter className */}
       <main className={inter.className}>
         <Component {...pageProps} />
       </main>

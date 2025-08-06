@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-gray-900 text-black dark:text-white shadow-sm transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="w-full max-w-[1600px] mx-auto px-4 px-6 py-4">
         {/* Desktop Nav */}
         <div className="flex items-center justify-between">
           {/* Logo */}
