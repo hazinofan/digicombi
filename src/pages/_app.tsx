@@ -2,16 +2,13 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "@/context/ThemeContext";
-
-// 1) Import Inter from next/font
 import { Inter } from "next/font/google";
 
-// 2) Configure it (subset + weights you need + display strategy)
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], 
+  weight: ["400", "500", "700"],
   display: "swap",
-  variable: "--font-inter",    
+  variable: "--font-inter",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -19,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider>
       <main className={inter.className}>
         <Component {...pageProps} />
+        {/* ⛔️ removed: <div id="modal-root" /> */}
       </main>
     </ThemeProvider>
   );

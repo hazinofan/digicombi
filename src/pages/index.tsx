@@ -1,14 +1,10 @@
-import ServicesSection from "../../components/cards";
-import ContactUsSection from "../../components/contact";
-import AboutSection from "../../components/HeroSection";
 import Navbar from "../../layouts/Navbar";
-import EverythingYouNeedSection from "../../components/needs";
-import BusinessSolutionsSection from "../../components/solutions";
-import TeamSection from "../../components/team";
-import TestimonialsSection from "../../components/testimonial";
 import Footer from "../../layouts/footer";
 import Image from "next/image";
 import { Mail, MapPin, Phone, Quote, Send, Star } from "lucide-react";
+import { useState, KeyboardEvent } from "react";
+import Modal from "../../components/Modal";
+import SplineRobot from "../../components/SplineRobot";
 
 const testimonials = [
   {
@@ -116,6 +112,7 @@ const services = [
       "Analyse complète de votre infrastructure informatique pour détecter les failles, améliorer la sécurité et optimiser les performances.",
     icon: "/icons/icon1.png",
     color: "bg-blue-100 dark:bg-blue-900/30",
+    video: "/videos/audit.mp4",
   },
   {
     title: "Formation IT personnalisée",
@@ -154,64 +151,110 @@ const services = [
 ];
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<any | null>(null);
+
+  function openService(s: any) {
+    setActive(s);
+    setOpen(true);
+  }
+
+  function onKeyCard(e: KeyboardEvent<HTMLDivElement>, s: any) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openService(s);
+    }
+  }
   return (
     <>
       <Navbar />
-      <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-20">
+      <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-16">
         <section id="about" className="min-h-[calc(100vh-80px)]">
-          <section className="py-20 transition-colors duration-300">
-            <div className="mx-auto px-6 md:px-8 flex flex-col md:flex-row items-center gap-20">
-              {/* Left: Big GIF */}
-              <div className="w-full md:w-1/2 flex justify-center">
-                {/* on mobile ~300px, on md+ ~600px */}
-                <div className="w-[300px] h-[300px] md:w-[600px] md:h-[600px]">
-                  <img
-                    src="/assets/animations-2.gif"
-                    alt="DigiCombi animation"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+          <section className="py-16 md:py-24 transition-colors duration-300 bg-gradient-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-800/50">
+            <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center gap-8 text-center">
+              {/* Robot en position supérieure */}
+              <div className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] relative mb-4">
+                <SplineRobot
+                  sceneUrl="https://prod.spline.design/mr5HIUUkmAe93obW/scene.splinecode"
+                  className="w-full h-full rounded-2xl"
+                />
+                {/* Effets visuels subtils */}
+                <div className="absolute -top-2 -right-2 w-16 h-16 bg-blue-500/10 rounded-full blur-lg"></div>
+                <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-purple-500/10 rounded-full blur-lg"></div>
               </div>
 
-              {/* Right: Text */}
-              <div className="w-full md:w-1/2 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
-                  DigiCombi – Votre partenaire digital pour tous vos services IT
+              {/* Contenu concis en dessous */}
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Votre partenaire digital
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                  DigiCombi —{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                    Transformation digitale
+                  </span>
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300">
-                  DigiCombi – Votre partenaire digital pour tous vos services IT
+
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                  Chez DigiCombi, nous combinons expertise technique et
+                  proximité pour faire de la technologie un véritable levier de
+                  croissance pour votre entreprise.
                 </p>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Chez DigiCombi, nous croyons que la technologie doit être un
-                  levier de croissance, pas un frein.
-                </p>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Notre nom combine Digital et Combi, un terme familier qui
-                  signifie “partenaire” : car nous ne sommes pas qu’un
-                  prestataire, mais un véritable allié numérique.
-                </p>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Création de site internet, marketing digital, gestion des
-                  identités, cybersécurité, infonuagique (cloud), support
-                  technique, transformation numérique…
-                </p>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Nous offrons une gamme complète de services IT, adaptés à vos
-                  besoins et à vos ambitions.
-                </p>
-                <p className="text-gray-600 dark:text-gray-300">
-                  DigiCombi, c’est l’expertise, la proximité et la confiance
-                  pour faire de votre environnement technologique un moteur de
-                  performance.
-                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-6 max-w-md mx-auto">
+                  {[
+                    "Sites web",
+                    "Marketing digital",
+                    "Cybersécurité",
+                    "Cloud",
+                  ].map((service, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-center bg-white dark:bg-slate-800/50 p-3 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-green-500 mr-2"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span className="text-sm">{service}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-6">
+                  <a href="#services" className="px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg">
+                    Découvrir nos services
+                  </a>
+                </div>
               </div>
             </div>
           </section>
         </section>
-        <section id="services" className="py-20">
-          <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 transition-colors duration-300">
+        <section id="services" className="pb-20">
+          <section className="pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 transition-colors duration-300">
             <div className="w-full max-w-[1600px] mx-auto px-4">
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 pt-16">
                 <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 mb-4">
                   Nos Services
                 </span>
@@ -232,12 +275,17 @@ export default function Home() {
                 {services.map((service, index) => (
                   <div
                     key={index}
-                    className={`group relative overflow-hidden rounded-2xl p-6 ${service.color} transition-all duration-300 hover:-translate-y-2`}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => openService(service)}
+                    onKeyDown={(e) => onKeyCard(e, service)}
+                    className={`group relative overflow-hidden rounded-2xl p-6 cursor-pointer outline-none ring-offset-2 focus:ring-2 focus:ring-blue-600 ${service.color} transition-all duration-300 hover:-translate-y-2`}
+                    aria-label={`Voir la vidéo: ${service.title}`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="relative z-10">
-                      <div className=" mb-6 rounded-xl flex items-center justify-center ">
+                      <div className="mb-6 rounded-xl flex items-center justify-center">
                         <div className="w-56 h-56 relative">
                           <Image
                             src={service.icon}
@@ -258,85 +306,120 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+
+              {/* Modal with autoplay video */}
+              <Modal
+                open={open}
+                onClose={() => {
+                  setOpen(false);
+                  setActive(null);
+                }}
+                title={active?.title ?? "Service"}
+              >
+                {active && (
+                  <div className="space-y-4">
+                    <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
+                      <video
+                        src={active.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        controls={false}
+                        disableRemotePlayback
+                        // optional poster if you added it
+                        poster={active.poster}
+                        className="absolute inset-0 h-full w-full object-cover pointer-events-none select-none"
+                        aria-label={`Présentation vidéo ${active.title}`}
+                      />
+                    </div>
+
+                    {/* (Optionnel) Description sous la vidéo */}
+                    <p className="text-sm text-white-black dark:text-black leading-relaxed">
+                      {active.description}
+                    </p>
+                  </div>
+                )}
+              </Modal>
             </div>
           </section>
         </section>
-<section id="team" className="py-20">
-  <section className="py-28 px-0 bg-white dark:bg-neutral-950">
-    <div className="w-full">
-      <div className="text-center mb-16">
-        <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 mb-4">
-          Notre Équipe
-        </span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-          Rencontrez nos{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-            experts
-          </span>
-        </h2>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Une équipe passionnée dédiée à votre réussite technologique.
-        </p>
-      </div>
+        <section id="team" className="py-20 ">
+          <section className="py-28 px-0 bg-white dark:bg-neutral-950 ">
+            <div className="w-full ">
+              <div className="text-center mb-16">
+                <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 mb-4">
+                  Notre Équipe
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+                  Rencontrez nos{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
+                    experts
+                  </span>
+                </h2>
+                <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                  Une équipe passionnée dédiée à votre réussite technologique.
+                </p>
+              </div>
 
-      {/* Updated grid for responsive layout */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
-        {team.map((member, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-neutral-900 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
-          >
-            <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-xl overflow-hidden mb-4 sm:mb-6">
-              <Image
-                src={member.image}
-                alt={member.name}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">
-                {member.name}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
-                {member.role}
-              </p>
-
-              <div className="flex justify-center space-x-3 sm:space-x-4">
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300"
-                  aria-label={`${member.name} LinkedIn`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 48 48"
-                    className="w-5 h-5 sm:w-6 sm:h-6"
+              {/* Updated grid for responsive layout */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 px-4 md:px-32">
+                {team.map((member, index) => (
+                  <div
+                    key={index}
+                    className="group relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-neutral-900 p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                   >
-                    <path
-                      fill="#0288D1"
-                      d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                    ></path>
-                    <path
-                      fill="#FFF"
-                      d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
-                    ></path>
-                  </svg>
-                </a>
+                    <div className="relative w-full h-48 sm:h-64 md:h-72 rounded-xl overflow-hidden mb-4 sm:mb-6">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+
+                    <div className="text-center">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
+                        {member.role}
+                      </p>
+
+                      <div className="flex justify-center space-x-3 sm:space-x-4">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-300"
+                          aria-label={`${member.name} LinkedIn`}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 48 48"
+                            className="w-5 h-5 sm:w-6 sm:h-6"
+                          >
+                            <path
+                              fill="#0288D1"
+                              d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                            ></path>
+                            <path
+                              fill="#FFF"
+                              d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+                            ></path>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-</section>
+          </section>
+        </section>
         <section id="testimonials" className="py-20">
           <section className="py-28 bg-gray-50 dark:bg-neutral-950">
             <div className="w-full max-w-[1600px] mx-auto px-4">
