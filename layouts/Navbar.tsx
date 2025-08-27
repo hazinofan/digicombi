@@ -17,6 +17,7 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const logoSrc = theme === "dark" ? "/assets/darkLogo.png" : "/assets/logo.png";
   const [progress, setProgress] = useState(0);
   const [open, setOpen] = React.useState(false);
   const sectionIds = useMemo(
@@ -137,9 +138,8 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className={`fixed w-full top-0 z-50 bg-white dark:bg-gray-900 text-black dark:text-white shadow-sm transition-all duration-300 ${
-        scrolled ? "py-2 shadow-lg" : "py-4"
-      }`}
+      className={`fixed w-full top-0 z-50 bg-white dark:bg-gray-900 text-black dark:text-white shadow-sm transition-all duration-300 ${scrolled ? "py-2 shadow-lg" : "py-4"
+        }`}
     >
       <SupportBot />
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6">
@@ -151,13 +151,14 @@ export default function Navbar() {
             className="cursor-pointer"
           >
             <Image
-              src="/assets/logo.png"
-              alt="Digicombi"
-              width={140}
-              height={40}
-              className={`transition-all duration-300 ${
-                scrolled ? "h-8 w-auto" : "h-10 w-auto"
-              }`}
+              key={logoSrc}
+              src={logoSrc}
+              alt="DigiCombi"
+              width={180}
+              height={67}
+              priority
+              className={`transition-all duration-300 ${scrolled ? "h-8 w-auto" : "h-10 w-auto"
+                }`}
             />
           </a>
 

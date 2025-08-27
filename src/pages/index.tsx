@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "../../layouts/Navbar";
 import Footer from "../../layouts/footer";
 import Image from "next/image";
@@ -103,6 +104,14 @@ const team = [
     twitter: "#",
     github: "#",
   },
+  {
+    name: "OMGBA EKOTTO Louis",
+    role: "Cybersécurty expert",
+    image: "/team/avatar.png",
+    linkedin: "https://www.linkedin.com/in/lomgba/",
+    twitter: "#",
+    github: "#",
+  },
 ];
 
 const services = [
@@ -168,6 +177,28 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Head>
+        <title>Digicombi | Agence Digitale & Développement Web au Maroc</title>
+        <meta
+          name="description"
+          content="Digicombi, votre partenaire en transformation digitale : création de sites web, e-commerce, cybersécurité, cloud et solutions sur mesure. Contactez-nous dès aujourd’hui !"
+        />
+        <meta name="keywords" content="agence digitale Maroc, création site web, développement web, e-commerce, cybersécurité, cloud, design UI UX" />
+        <meta name="author" content="Digicombi" />
+
+        {/* Open Graph for social sharing */}
+        <meta property="og:title" content="Digicombi | Agence Digitale & Développement Web" />
+        <meta property="og:description" content="Votre partenaire digital pour sites web, e-commerce, cybersécurité, cloud et solutions sur mesure." />
+        <meta property="og:image" content="/assets/logo.png" />
+        <meta property="og:url" content="https://www.digicombi.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digicombi | Agence Digitale & Développement Web" />
+        <meta name="twitter:description" content="Transformation digitale : sites web, e-commerce, cybersécurité, cloud et plus encore." />
+        <meta name="twitter:image" content="/assets/logo.png" />
+      </Head>
       <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-16">
         <section id="about" className="min-h-[calc(100vh-80px)]">
           <section className="py-16 md:py-24 transition-colors duration-300 bg-gradient-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-800/50">
@@ -473,11 +504,10 @@ export default function Home() {
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`text-sm ${
-                                  i < testimonial.rating
+                                className={`text-sm ${i < testimonial.rating
                                     ? "text-yellow-400"
                                     : "text-gray-300 dark:text-gray-600"
-                                }`}
+                                  }`}
                               />
                             ))}
                           </div>
