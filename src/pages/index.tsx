@@ -202,16 +202,19 @@ export default function Home() {
       <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-16">
         <section id="about" className="min-h-[calc(100vh-80px)]">
           <section className="py-16 md:py-24 transition-colors duration-300 bg-gradient-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-800/50">
-            <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center gap-8 text-center">
+            <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
               {/* Robot en position supérieure */}
-              <div className="w-[200px] h-[200px] md:w-[280px] md:h-[280px] relative mb-4">
-                <SplineRobot
-                  sceneUrl="https://prod.spline.design/mr5HIUUkmAe93obW/scene.splinecode"
-                  className="w-full h-full rounded-2xl"
-                />
-                {/* Effets visuels subtils */}
-                <div className="absolute -top-2 -right-2 w-16 h-16 bg-blue-500/10 rounded-full blur-lg"></div>
-                <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-purple-500/10 rounded-full blur-lg"></div>
+              <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
+                {/* Robot en position supérieure */}
+                <div className="w-[200px] h-[200px] md:w-[380px] md:h-[380px] relative mb-4">
+                  <SplineRobot
+                    sceneUrl="https://prod.spline.design/mr5HIUUkmAe93obW/scene.splinecode"
+                    className="w-full h-full rounded-2xl"
+                  />
+                  {/* Effets visuels subtils */}
+                  <div className="absolute -top-2 -right-2 w-16 h-16 bg-blue-500/10 rounded-full blur-lg"></div>
+                  <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-purple-500/10 rounded-full blur-lg"></div>
+                </div>
               </div>
 
               {/* Contenu concis en dessous */}
@@ -505,8 +508,8 @@ export default function Home() {
                               <Star
                                 key={i}
                                 className={`text-sm ${i < testimonial.rating
-                                    ? "text-yellow-400"
-                                    : "text-gray-300 dark:text-gray-600"
+                                  ? "text-yellow-400"
+                                  : "text-gray-300 dark:text-gray-600"
                                   }`}
                               />
                             ))}
