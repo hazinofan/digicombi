@@ -1494,10 +1494,10 @@
     "@smithy/util-buffer-from" "^4.0.0"
     tslib "^2.6.2"
 
-"@splinetool/react-spline@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/@splinetool/react-spline/-/react-spline-4.1.0.tgz"
-  integrity sha512-Y379gm17gw+1nxT/YXTCJnVIWuu7tsUH1tp/YxsYb0pZnc9Gljk7Om4Kpq7WPq0bZ4zidVCxf6xn6jgDcbHifQ==
+"@splinetool/react-spline@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@splinetool/react-spline/-/react-spline-4.0.0.tgz"
+  integrity sha512-FqrV7/K2q998Y0t83QUauQxsifKWAg9CFZoSb64qRuH7IfHkDs5/OgU1ACkg0aTgsEPtFlH+kATQ+8X6MrizHQ==
   dependencies:
     blurhash "2.0.5"
     lodash.debounce "4.0.8"
