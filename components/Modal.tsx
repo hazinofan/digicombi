@@ -14,10 +14,11 @@ type ModalProps = {
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
+  showSendButton?: boolean;
 };
 
-export default function Modal({ open, onClose, title, children }: ModalProps) {
-  const panelRef = useRef<HTMLDivElement>(null);
+export default function Modal({ open, onClose, title, children,showSendButton = true, }: ModalProps) {
+  const panelRef = useRef<HTMLDivElement>(null);  
 
   // lock body scroll while open
   useEffect(() => {
@@ -92,9 +93,11 @@ export default function Modal({ open, onClose, title, children }: ModalProps) {
           >
             Annuler
           </button>
-          <button className="px-4 py-2 rounded-xl bg-blue-900 text-white hover:bg-blue-950">
-            Envoyer
-          </button>
+          {showSendButton && ( // <-- affichage conditionnel
+            <button className="px-4 py-2 rounded-xl bg-blue-900 text-white hover:bg-blue-950">
+              Envoyer
+            </button>
+          )}
         </div>
       </div>
     </div>,

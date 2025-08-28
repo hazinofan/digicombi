@@ -1,53 +1,82 @@
+// pages/api/contact.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
+const requiredEnv = [
+  "SMTP_HOST",
+  "SMTP_PORT",
+  "SMTP_USER",
+  "SMTP_PASS",
+  "CONTACT_FROM",
+  "CONTACT_TO",
+] as const;
+
+requiredEnv.forEach((k) => {
+  if (!process.env[k]) console.warn(`[contact] Missing env var: ${k}`);
+});
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT || 465),
+  secure: String(process.env.SMTP_SECURE) !== "false", // 465 => true
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
-
-  const { name, email, phone, subject, message } = req.body;
-
-  if (!name || !email || !subject || !message) {
-    return res.status(400).json({ message: "Missing required fields" });
+    return res.status(405).json({ ok: false, message: "Method not allowed" });
   }
 
   try {
-    // 🔑 Configure transporter with your SMTP credentials
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,      // ex: smtp.hostinger.com
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,   // ex: info@digicombi.com
-        pass: process.env.SMTP_PASS,   // your mailbox password
-      },
-    });
+    // Log the incoming payload (safe; no secrets here)
+    console.log("[contact] Incoming body:", req.body);
 
-    // 📧 Send mail
-    await transporter.sendMail({
-      from: `"Digicombi Contact" <${process.env.SMTP_USER}>`,
-      to: "info@digicombi.com",
-      subject: `Contact Form: ${subject}`,
+    const { name, email, phone, subject, message } = req.body || {};
+
+    // minimal validation
+    if (!name || !email || !subject || !message) {
+      console.warn("[contact] Missing required fields");
+      return res.status(400).json({ ok: false, message: "Champs requis manquants." });
+    }
+
+    const text = `Nouveau message depuis le formulaire Digicombi
+------------------------------------------------
+Nom: ${name}
+Email: ${email}
+Téléphone: ${phone || "-"}
+Sujet: ${subject}
+
+Message:
+${message}
+`;
+
+    const info = await transporter.sendMail({
+      from: process.env.CONTACT_FROM, // your mailbox
+      to: process.env.CONTACT_TO,     // recipient (often same mailbox)
       replyTo: email,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone || "N/A"}
-        Message: ${message}
-      `,
-      html: `
-        <h3>New contact request</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
+      subject: `Contact: ${subject}`,
+      text,
     });
 
-    return res.status(200).json({ message: "Message sent successfully ✅" });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Failed to send message ❌" });
+    // ✅ success log
+    console.log("[contact] ✅ Mail sent", {
+      messageId: info.messageId,
+      response: info.response,
+      to: process.env.CONTACT_TO,
+    });
+
+    return res.status(200).json({ ok: true });
+  } catch (err: any) {
+    // ❌ failure log
+    console.error("[contact] ❌ Mail failed", {
+      name: err?.name,
+      code: err?.code,
+      message: err?.message,
+      stack: err?.stack,
+    });
+    return res.status(500).json({ ok: false, message: "Erreur d’envoi du mail." });
   }
 }

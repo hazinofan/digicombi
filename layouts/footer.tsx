@@ -36,28 +36,23 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-white">Navigation</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link href="/#about" className="text-gray-400 hover:text-white transition-colors duration-300">
                   À propos
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link href="/#services" className="text-gray-400 hover:text-white transition-colors duration-300">
                   Nos solutions
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Réalisations
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Link href="/#team" className="text-gray-400 hover:text-white transition-colors duration-300">
                   Notre équipe
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors duration-300">
-                  Blog
+                <Link href="/#contact" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Contact
                 </Link>
               </li>
             </ul>

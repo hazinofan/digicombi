@@ -107,7 +107,7 @@ const team = [
   {
     name: "OMGBA EKOTTO Louis",
     role: "Cybersécurty expert",
-    image: "/team/avatar.png",
+    image: "/team/cyber.png",
     linkedin: "https://www.linkedin.com/in/lomgba/",
     twitter: "#",
     github: "#",
@@ -116,12 +116,12 @@ const team = [
 
 const services = [
   {
-    title: "Audit de système informatique",
+    title: "Automatisation avec IA",
     description:
-      "Analyse complète de votre infrastructure informatique pour détecter les failles, améliorer la sécurité et optimiser les performances.",
-    icon: "/icons/icon1.png",
-    color: "bg-blue-100 dark:bg-blue-900/30",
-    video: "/videos/audit.mp4",
+      "Mettez l'intelligence artificielle au service de votre quotidien : automatisation de tâches, assistant personnel, et plus encore.",
+    icon: "/icons/icon3.png",
+    color: "bg-emerald-100 dark:bg-emerald-900/30",
+    video: "/assets/video4.mp4",
   },
   {
     title: "Formation IT personnalisée",
@@ -129,13 +129,15 @@ const services = [
       "Apprenez à maîtriser les outils informatiques (bureautique, web, cybersécurité...) à votre rythme.",
     icon: "/icons/icon2.png",
     color: "bg-purple-100 dark:bg-purple-900/30",
+    video: "/assets/video5.mp4",
   },
   {
-    title: "Automatisation avec IA",
+    title: "Audit de système informatique",
     description:
-      "Mettez l'intelligence artificielle au service de votre quotidien : automatisation de tâches, assistant personnel, et plus encore.",
-    icon: "/icons/icon3.png",
-    color: "bg-emerald-100 dark:bg-emerald-900/30",
+      "Analyse complète de votre infrastructure informatique pour détecter les failles, améliorer la sécurité et optimiser les performances.",
+    icon: "/icons/icon1.png",
+    color: "bg-blue-100 dark:bg-blue-900/30",
+    video: "/assets/video6.mp4",
   },
   {
     title: "Design UI/UX",
@@ -143,12 +145,14 @@ const services = [
       "Création d'interfaces intuitives, modernes et efficaces pour offrir la meilleure expérience utilisateur.",
     icon: "/icons/icon4.png",
     color: "bg-amber-100 dark:bg-amber-900/30",
+    video: "/assets/video1.mp4",
   },
   {
     title: "Édition vidéo",
     description: "Besoin de vidéos professionnelles éditées ? Nous sommes là !",
     icon: "/icons/icon5.png",
     color: "bg-rose-100 dark:bg-rose-900/30",
+    video: "/assets/video2.mp4",
   },
   {
     title: "Création de logiciels sur-mesure",
@@ -156,6 +160,7 @@ const services = [
       "Développement de solutions logicielles adaptées à vos besoins personnels ou professionnels.",
     icon: "/icons/icon6.png",
     color: "bg-indigo-100 dark:bg-indigo-900/30",
+    video: "/assets/video3.mp4",
   },
 ];
 
@@ -183,20 +188,35 @@ export default function Home() {
           name="description"
           content="Digicombi, votre partenaire en transformation digitale : création de sites web, e-commerce, cybersécurité, cloud et solutions sur mesure. Contactez-nous dès aujourd’hui !"
         />
-        <meta name="keywords" content="agence digitale Maroc, création site web, développement web, e-commerce, cybersécurité, cloud, design UI UX" />
+        <meta
+          name="keywords"
+          content="agence digitale Maroc, création site web, développement web, e-commerce, cybersécurité, cloud, design UI UX"
+        />
         <meta name="author" content="Digicombi" />
 
         {/* Open Graph for social sharing */}
-        <meta property="og:title" content="Digicombi | Agence Digitale & Développement Web" />
-        <meta property="og:description" content="Votre partenaire digital pour sites web, e-commerce, cybersécurité, cloud et solutions sur mesure." />
+        <meta
+          property="og:title"
+          content="Digicombi | Agence Digitale & Développement Web"
+        />
+        <meta
+          property="og:description"
+          content="Votre partenaire digital pour sites web, e-commerce, cybersécurité, cloud et solutions sur mesure."
+        />
         <meta property="og:image" content="/assets/logo.png" />
         <meta property="og:url" content="https://www.digicombi.com" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Digicombi | Agence Digitale & Développement Web" />
-        <meta name="twitter:description" content="Transformation digitale : sites web, e-commerce, cybersécurité, cloud et plus encore." />
+        <meta
+          name="twitter:title"
+          content="Digicombi | Agence Digitale & Développement Web"
+        />
+        <meta
+          name="twitter:description"
+          content="Transformation digitale : sites web, e-commerce, cybersécurité, cloud et plus encore."
+        />
         <meta name="twitter:image" content="/assets/logo.png" />
       </Head>
       <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-16">
@@ -250,8 +270,8 @@ export default function Home() {
 
                 <div className="grid grid-cols-2 gap-3 mt-6 max-w-md mx-auto">
                   {[
+                    "Automatisation de l'IA",
                     "Sites web",
-                    "Marketing digital",
                     "Cybersécurité",
                     "Cloud",
                   ].map((service, index) => (
@@ -277,7 +297,10 @@ export default function Home() {
                 </div>
 
                 <div className="pt-6">
-                  <a href="#services" className="px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg">
+                  <a
+                    href="#services"
+                    className="px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg"
+                  >
                     Découvrir nos services
                   </a>
                 </div>
@@ -285,8 +308,8 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <section id="services" className="pb-20">
-          <section className="pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 transition-colors duration-300">
+        <section id="services" className="">
+          <section className="px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 transition-colors duration-300">
             <div className="w-full max-w-[1600px] mx-auto px-4">
               <div className="text-center mb-16 pt-16">
                 <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 mb-4">
@@ -349,6 +372,7 @@ export default function Home() {
                   setActive(null);
                 }}
                 title={active?.title ?? "Service"}
+                showSendButton={false}
               >
                 {active && (
                   <div className="space-y-4">
@@ -357,7 +381,6 @@ export default function Home() {
                         src={active.video}
                         autoPlay
                         loop
-                        muted
                         playsInline
                         controls={false}
                         disableRemotePlayback
@@ -378,8 +401,8 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <section id="team" className="py-20 ">
-          <section className="py-28 px-0 bg-white dark:bg-neutral-950 ">
+        <section id="team" className="py-10 ">
+          <section className="py-10 px-0 bg-white dark:bg-neutral-950 ">
             <div className="w-full ">
               <div className="text-center mb-16">
                 <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 mb-4">
@@ -507,10 +530,11 @@ export default function Home() {
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`text-sm ${i < testimonial.rating
-                                  ? "text-yellow-400"
-                                  : "text-gray-300 dark:text-gray-600"
-                                  }`}
+                                className={`text-sm ${
+                                  i < testimonial.rating
+                                    ? "text-yellow-400"
+                                    : "text-gray-300 dark:text-gray-600"
+                                }`}
                               />
                             ))}
                           </div>
@@ -533,7 +557,7 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <section id="contact" className="py-20">
+        <section id="contact" className="">
           <section className="py-28 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 transition-colors duration-300">
             <div className="w-full max-w-[1600px] mx-auto px-4">
               <div className="text-center mb-16">
@@ -632,7 +656,37 @@ export default function Home() {
                     Envoyez-nous un message
                   </h3>
 
-                  <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <form
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    onSubmit={async (e) => {
+                      e.preventDefault();
+                      const form = e.currentTarget as HTMLFormElement;
+                      const data = {
+                        name: (form.querySelector("#name") as HTMLInputElement)
+                          .value,
+                        email: (
+                          form.querySelector("#email") as HTMLInputElement
+                        ).value,
+                        phone:
+                          (form.querySelector("#phone") as HTMLInputElement)
+                            ?.value || "",
+                        subject: (
+                          form.querySelector("#subject") as HTMLInputElement
+                        ).value,
+                        message: (
+                          form.querySelector("#message") as HTMLTextAreaElement
+                        ).value,
+                      };
+                      const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data),
+                      });
+                      const json = await res.json();
+                      if (json.ok) alert("Message envoyé ✅");
+                      else alert(json.message || "Échec de l’envoi ❌");
+                    }}
+                  >
                     <div className="space-y-2">
                       <label
                         htmlFor="name"
