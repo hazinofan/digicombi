@@ -12,12 +12,12 @@ const SECTIONS: Section[] = [
     title: "Création de site web",
     items: [
       {
-        q: "Création de site vitrine / e‑commerce",
-        a: "Nous concevons des sites rapides, SEO‑friendly (Next.js + Tailwind), avec paiement, catalogue, formulaires, et hébergement managé. Démo et devis gratuits.",
+        q: "Création de site vitrine / e-commerce",
+        a: "Nous concevons des sites rapides, SEO-friendly (Next.js + Tailwind), avec paiement, catalogue, formulaires, et hébergement managé. Démo et devis gratuits.",
       },
       {
         q: "Délais de réalisation",
-        a: "Vitrine: 1–3 semaines selon contenus. E‑commerce: 3–6 semaines (produits, paiements, intégrations). Planning précis fourni au kick‑off.",
+        a: "Vitrine: 1–3 semaines selon contenus. E-commerce: 3–6 semaines (produits, paiements, intégrations). Planning précis fourni au kick-off.",
       },
       {
         q: "Maintenance & évolutions",
@@ -26,15 +26,27 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    title: "Marketing digital",
+    title: "IA & Automatisation",
     items: [
       {
-        q: "Référencement (SEO)",
-        a: "Audit technique, optimisation sémantique, maillage interne, performance, et suivi mensuel des positions avec reporting clair.",
+        q: "Comment créez-vous un site avec IA (chatbot, recherche, recommandations) ?",
+        a: "Architecture RAG (base de connaissances + embeddings) ou fine-tuning selon le besoin, intégrée à Next.js (API Routes/Edge). UI en React + Tailwind, stockage de données (PostgreSQL/Vector DB), et déploiement sur Vercel/Azure.",
       },
       {
-        q: "Publicité (Ads)",
-        a: "Campagnes Google/Meta/TikTok: mise en place, tracking (GA4), A/B tests, et rapports ROI.",
+        q: "Quels modèles d’IA utilisez-vous ?",
+        a: "OpenAI, Claude, ou Llama-3/4 via fournisseurs adaptés. Choix selon langue, coût, latence, conformité, et personnalisation (RAG vs fine-tuning).",
+      },
+      {
+        q: "Automatisations possibles pour mon business ?",
+        a: "Réponses clients 24/7 (site/WhatsApp), génération de contenus produits, tri des leads, extraction de documents (OCR), e-mails et factures, synchronisation CRM/ERP via Zapier/Make/Workflows maison.",
+      },
+      {
+        q: "Coûts & délais pour une fonctionnalité IA ?",
+        a: "MVP chatbot/RAG: 1–2 semaines. Abonnement modèle + hébergement calculé à l’usage (tokens/req). Chiffrage transparent avant démarrage.",
+      },
+      {
+        q: "Sécurité & confidentialité",
+        a: "Données chiffrées en transit/au repos, logs anonymisés, cloisonnement par client, et contrôle d’accès (SSO/MFA). Aucune réutilisation de vos données sans accord.",
       },
     ],
   },
@@ -75,8 +87,8 @@ const SECTIONS: Section[] = [
     title: "Général",
     items: [
       {
-        q: "Qui sommes‑nous ?",
-        a: "DigiCombi, partenaire digital: création de sites, marketing, identité, cybersécurité, cloud et support. Proximité, expertise, confiance.",
+        q: "Qui sommes-nous ?",
+        a: "DigiCombi, partenaire digital: création de sites, IA & automatisation, identité, cybersécurité, cloud et support. Proximité, expertise, confiance.",
       },
       {
         q: "Processus de projet",
@@ -85,6 +97,7 @@ const SECTIONS: Section[] = [
     ],
   },
 ];
+
 
 /** ----- TYPES & UTILS ----- */
 type Message = { role: "user" | "bot"; text: string; time: number; id: string };

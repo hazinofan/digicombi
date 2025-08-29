@@ -96,7 +96,7 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Digicombi. Tous droits réservés.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {/* <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link href="/privacy" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">
               Confidentialité
             </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
             <Link href="/sitemap" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">
               Plan du site
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
