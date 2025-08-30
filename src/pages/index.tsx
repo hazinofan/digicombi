@@ -397,7 +397,7 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <section id="team" className="py-10 ">
+        <section id="team" className="pt-10 ">
           <section className="py-10 px-0 bg-white dark:bg-neutral-950 ">
             <div className="w-full ">
               <div className="text-center mb-16">
@@ -479,7 +479,7 @@ export default function Home() {
             </div>
           </section>
         </section>
-        <section id="testimonials" className="py-20">
+        <section id="testimonials" className="">
           <section className="py-28 bg-gray-50 dark:bg-neutral-950">
             <div className="w-full max-w-[1600px] mx-auto px-4">
               <div className="text-center mb-16">
