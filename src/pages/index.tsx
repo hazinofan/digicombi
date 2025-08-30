@@ -266,7 +266,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 gap-3 mt-6 max-w-5xl mx-auto">
                   {[
-                    "Automatisation de l'IA",
+                    "Automatisation avec l'IA",
                     "Sites web / applications mobiles",
                     "Cybersécurité",
                     "Cloud",
