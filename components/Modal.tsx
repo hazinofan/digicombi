@@ -89,9 +89,9 @@ export default function Modal({ open, onClose, title, children,showSendButton = 
         <div className="px-5 py-4 flex justify-end gap-2">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl border border-slate-200 hover:bg-slate-50"
+            className="px-4 py-2 cursor-pointer rounded-xl border border-slate-200 hover:bg-slate-50"
           >
-            Annuler
+            Fermer
           </button>
           {showSendButton && ( // <-- affichage conditionnel
             <button className="px-4 py-2 rounded-xl bg-blue-900 text-white hover:bg-blue-950">

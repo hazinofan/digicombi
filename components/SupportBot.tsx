@@ -25,31 +25,23 @@ const SECTIONS: Section[] = [
       },
     ],
   },
-  {
-    title: "IA & Automatisation",
-    items: [
-      {
-        q: "Comment créez-vous un site avec IA (chatbot, recherche, recommandations) ?",
-        a: "Architecture RAG (base de connaissances + embeddings) ou fine-tuning selon le besoin, intégrée à Next.js (API Routes/Edge). UI en React + Tailwind, stockage de données (PostgreSQL/Vector DB), et déploiement sur Vercel/Azure.",
-      },
-      {
-        q: "Quels modèles d’IA utilisez-vous ?",
-        a: "OpenAI, Claude, ou Llama-3/4 via fournisseurs adaptés. Choix selon langue, coût, latence, conformité, et personnalisation (RAG vs fine-tuning).",
-      },
-      {
-        q: "Automatisations possibles pour mon business ?",
-        a: "Réponses clients 24/7 (site/WhatsApp), génération de contenus produits, tri des leads, extraction de documents (OCR), e-mails et factures, synchronisation CRM/ERP via Zapier/Make/Workflows maison.",
-      },
-      {
-        q: "Coûts & délais pour une fonctionnalité IA ?",
-        a: "MVP chatbot/RAG: 1–2 semaines. Abonnement modèle + hébergement calculé à l’usage (tokens/req). Chiffrage transparent avant démarrage.",
-      },
-      {
-        q: "Sécurité & confidentialité",
-        a: "Données chiffrées en transit/au repos, logs anonymisés, cloisonnement par client, et contrôle d’accès (SSO/MFA). Aucune réutilisation de vos données sans accord.",
-      },
-    ],
-  },
+{
+  title: "IA & Automatisation",
+  items: [
+    {
+      q: "Automatiser mes tâches bureautiques grâce à l’IA ?",
+      a: "Oui, l’IA peut vous aider à gagner du temps en rédigeant vos e-mails, en créant des documents automatiquement, en résumant des fichiers ou en générant des rapports en quelques secondes.",
+    },
+    {
+      q: "Manager mes réseaux sociaux automatiquement (posts, réponses aux messages) grâce à l’IA ?",
+      a: "Absolument ! L’IA peut programmer et publier vos posts automatiquement, répondre aux messages fréquents de vos clients et même vous proposer des idées de contenu adaptées à votre audience.",
+    },
+    {
+      q: "Automatisations possibles pour mon business ?",
+      a: "Réponses clients 24/7 (site/WhatsApp), génération de contenus produits, tri des prospects, extraction d’infos dans des documents, e-mails et factures automatiques, et connexion à vos outils existants comme CRM/ERP.",
+    },
+  ],
+},
   {
     title: "Identité & sécurité",
     items: [
@@ -228,7 +220,7 @@ export default function SupportBotChoice() {
       {open && (
         <div
           ref={panelRef}
-          className="fixed inset-0 md:inset-auto md:bottom-28 md:right-6 z-50 w-full h-full md:w-[95vw] md:max-w-md md:h-[800px] md:rounded-2xl border border-gray-200 bg-white shadow-2xl overflow-hidden flex flex-col backdrop-blur-sm bg-white/95"
+          className="fixed inset-0 md:inset-auto md:bottom-28 md:right-6 z-50 w-full h-full md:w-[95vw] md:max-w-md md:h-[800px] md:rounded-2xl border border-gray-200 shadow-2xl overflow-hidden flex flex-col backdrop-blur-sm bg-white/95"
         >
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-red-600 to-purple-600 text-white">

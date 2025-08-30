@@ -191,7 +191,7 @@ export default function Navbar() {
                   href={item.href}
                   onClick={(e) => scrollToSection(e, item.href)}
                   className={
-                    "relative text-sm lg:text-base transition-colors " +
+                    "relative text-sm lg:text-xl transition-colors " +
                     (isActive
                       ? "text-blue-600 dark:text-blue-400 font-semibold"
                       : "hover:text-blue-600 dark:hover:text-blue-400")

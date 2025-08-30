@@ -10,7 +10,6 @@ import SplineRobot from "../../components/SplineRobot";
 const testimonials = [
   {
     name: "Mike Hudson",
-    role: "PDG, TechSolutions Inc.",
     avatar: "/assets/ceo.webp",
     content:
       "Les services de design UI/UX de Digicombi ont transformé notre plateforme. Leur équipe a compris notre vision et a livré une interface intuitive qui a augmenté notre engagement utilisateur de 40 %.",
@@ -19,7 +18,6 @@ const testimonials = [
   },
   {
     name: "Sophie Martin",
-    role: "Directrice Marketing, InnovateCo",
     avatar: "/assets/woman-ceo.webp",
     content:
       "Le site web créé par Digicombi est magnifique et fonctionne à merveille. Nos taux de conversion ont doublé depuis le lancement, et leur support continu est irréprochable.",
@@ -28,7 +26,6 @@ const testimonials = [
   },
   {
     name: "David Chen",
-    role: "CTO, Startup Ventures",
     avatar: "/assets/man.webp",
     content:
       "Leur expertise en architecture cloud nous a permis d’économiser des milliers d’euros en coûts d’infrastructure. Les solutions de Digicombi sont évolutives, sécurisées et parfaitement adaptées à nos besoins.",
@@ -37,7 +34,6 @@ const testimonials = [
   },
   {
     name: "Amélie Dubois",
-    role: "Cheffe de Produit, AppTech",
     avatar: "/assets/amelie.webp",
     content:
       "Travailler avec Digicombi a été un véritable tournant. Leur solution logicielle sur mesure a automatisé nos processus et nous a fait gagner plus de 20 heures de travail manuel par semaine.",
@@ -50,7 +46,7 @@ const team = [
   {
     name: "Charles Landry RIM",
     role: "Fondateur | Architecte cloud",
-    image: "/team/charles.webp",
+    image: "/team/default4.webp",
     linkedin:
       "https://www.linkedin.com/in/charles-landry-rim-%C3%A0-nyam-5b4061134/",
     twitter: "#",
@@ -59,7 +55,7 @@ const team = [
   {
     name: "Martin Legault",
     role: "Back End Developer",
-    image: "/team/martin.webp",
+    image: "/team/default3.webp",
     linkedin: "https://www.linkedin.com/in/martin-lglt/",
     twitter: "#",
     github: "#",
@@ -67,15 +63,15 @@ const team = [
   {
     name: "Maryam Shahrabi",
     role: "IT Specialist",
-    image: "/team/maryam.webp",
+    image: "/team/default-girl3.webp",
     linkedin: "https://www.linkedin.com/in/maryshahrabi/",
     twitter: "#",
     github: "#",
   },
   {
-    name: "Jeanne Young",
+    name: "Jeanne Young", 
     role: "Back End Developer",
-    image: "/team/jeanne.webp",
+    image: "/team/default-girl2.webp",
     linkedin: "https://www.linkedin.com/in/jeanne-y-ba5159272/",
     twitter: "#",
     github: "#",
@@ -83,7 +79,7 @@ const team = [
   {
     name: "Breanna Reddock",
     role: "Full-Stack Web Developer",
-    image: "/team/breanna.webp",
+    image: "/team/default-girl.webp",
     linkedin: "https://www.linkedin.com/in/breanna-reddock/",
     twitter: "#",
     github: "#",
@@ -91,7 +87,7 @@ const team = [
   {
     name: "Reward Njefeh Yonkeu",
     role: "Oracle Database Administrator",
-    image: "/team/reward.webp",
+    image: "/team/default2.webp",
     linkedin: "https://www.linkedin.com/in/reward-njefeh-yonkeu/",
     twitter: "#",
     github: "#",
@@ -99,7 +95,7 @@ const team = [
   {
     name: "Ahmed Amine Maarouf",
     role: "Software Engineer0",
-    image: "/team/amine.webp",
+    image: "/team/default.webp",
     linkedin: "https://www.linkedin.com/in/ahmed-amine-maarouf-b08050293/",
     twitter: "#",
     github: "#",
@@ -107,7 +103,7 @@ const team = [
   {
     name: "OMGBA EKOTTO Louis",
     role: "Cybersécurty expert",
-    image: "/team/cyber.png",
+    image: "/team/avatar.webp",
     linkedin: "https://www.linkedin.com/in/lomgba/",
     twitter: "#",
     github: "#",
@@ -183,7 +179,7 @@ export default function Home() {
     <>
       <Navbar />
       <Head>
-        <title>Digicombi | Agence Digitale & Développement Web au Maroc</title>
+        <title>Digicombi | Agence Digitale & Développement Web</title>
         <meta
           name="description"
           content="Digicombi, votre partenaire en transformation digitale : création de sites web, e-commerce, cybersécurité, cloud et solutions sur mesure. Contactez-nous dès aujourd’hui !"
@@ -225,15 +221,15 @@ export default function Home() {
             <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
               {/* Robot en position supérieure */}
               <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
-                {/* Robot en position supérieure */}
-                <div className="w-[200px] h-[200px] md:w-[380px] md:h-[380px] relative mb-4">
+                {/* Robot container */}
+                <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px] relative mb-6">
                   <SplineRobot
                     sceneUrl="https://prod.spline.design/mr5HIUUkmAe93obW/scene.splinecode"
                     className="w-full h-full rounded-2xl"
                   />
-                  {/* Effets visuels subtils */}
-                  <div className="absolute -top-2 -right-2 w-16 h-16 bg-blue-500/10 rounded-full blur-lg"></div>
-                  <div className="absolute -bottom-2 -left-2 w-14 h-14 bg-purple-500/10 rounded-full blur-lg"></div>
+                  {/* Subtle glow effects */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-purple-500/10 rounded-full blur-2xl"></div>
                 </div>
               </div>
 
@@ -420,19 +416,19 @@ export default function Home() {
               </div>
 
               {/* Updated grid for responsive layout */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-8 px-3 md:px-32">
+              <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-4 md:gap-8 px-2 sm:px-3 md:px-32">
                 {team.map((member, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-neutral-900 p-3 sm:p-4 md:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
+                    className="group min-w-0 relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-neutral-900 p-2.5 sm:p-4 md:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                   >
-                    {/* Image: keep md+ heights the same, just tighten mobile */}
-                    <div className="relative w-full h-44 sm:h-56 md:h-72 rounded-xl overflow-hidden mb-3 sm:mb-4 md:mb-6">
+                    {/* Image — compact on mobile, same as before on md+ */}
+                    <div className="relative w-full h-36 sm:h-48 md:h-72 rounded-xl overflow-hidden mb-2.5 sm:mb-4 md:mb-6">
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
-                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                        sizes="(max-width: 640px) 45vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         priority={index < 2}
                       />
@@ -440,11 +436,13 @@ export default function Home() {
                     </div>
 
                     <div className="text-center px-0.5 sm:px-1">
-                      {/* Clamp only on mobile so long names don’t wrap oddly */}
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-0.5 md:mb-1 line-clamp-1 md:line-clamp-none">
+                      {/* Keep names on one line on mobile to avoid wrapping */}
+                      <h3 className="text-sm sm:text-base md:text-xl font-bold text-gray-900 dark:text-white mb-0.5 md:mb-1 truncate md:whitespace-normal md:truncate-none">
                         {member.name}
                       </h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 line-clamp-2 md:line-clamp-none">
+
+                      {/* Role: 2-line clamp only on mobile */}
+                      <p className="text-[11px] sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mb-2.5 sm:mb-4 line-clamp-2 md:line-clamp-none">
                         {member.role}
                       </p>
 
@@ -460,16 +458,16 @@ export default function Home() {
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 48 48"
-                              className="w-5 h-5 sm:w-6 sm:h-6"
+                              className="w-4 h-4 sm:w-6 sm:h-6"
                             >
                               <path
                                 fill="#0288D1"
                                 d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
-                              ></path>
+                              />
                               <path
                                 fill="#FFF"
                                 d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
-                              ></path>
+                              />
                             </svg>
                           </a>
                         )}
@@ -526,9 +524,6 @@ export default function Home() {
                             <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                               {testimonial.name}
                             </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
-                              {testimonial.role}
-                            </p>
                           </div>
                           <div className="flex items-center space-x-1">
                             {[...Array(5)].map((_, i) => (
