@@ -218,13 +218,13 @@ export default function Home() {
       <main className="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 pt-16">
         <section id="about" className="min-h-[calc(100vh-80px)]">
           <section className="py-16 md:py-24 transition-colors duration-300 bg-gradient-to-b from-white to-blue-50/30 dark:from-slate-900 dark:to-slate-800/50">
-            <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
+            <div className=" flex flex-col items-center text-center">
               {/* Robot en position supérieure */}
-              <div className="mx-auto max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
+              <div className=" flex flex-col items-center text-center">
                 {/* Robot container */}
-                <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[480px] md:h-[480px] lg:w-[560px] lg:h-[560px] relative mb-6">
+                <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[680px] md:h-[480px] lg:w-[1450px] lg:h-[850px] relative mb-6">
                   <SplineRobot
-                    sceneUrl="https://prod.spline.design/mr5HIUUkmAe93obW/scene.splinecode"
+                    sceneUrl="https://prod.spline.design/uwDDOkHRVcS-pS7h/scene.splinecode"
                     className="w-full h-full rounded-2xl"
                   />
                   {/* Subtle glow effects */}
