@@ -599,8 +599,8 @@ export default function Home() {
                         </h4>
                         <p className="text-gray-600 dark:text-gray-400 mt-1">
                           Dakar–Sénégal <br />
-                          Yaoundé, cameroun
-                          Bureau Montréal Canada ( encours )
+                          Yaoundé, cameroun <br />
+                          Montréal Canada ( encours )
                         </p>
                       </div>
                     </li>
