@@ -69,7 +69,7 @@ const team = [
     github: "#",
   },
   {
-    name: "Jeanne Young", 
+    name: "Jeanne Young",
     role: "Back End Developer",
     image: "/team/default-girl2.webp",
     linkedin: "https://www.linkedin.com/in/jeanne-y-ba5159272/",
@@ -527,14 +527,17 @@ export default function Home() {
                           </div>
                           <div className="flex items-center space-x-1">
                             {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`text-sm ${
-                                  i < testimonial.rating
-                                    ? "text-yellow-400"
-                                    : "text-gray-300 dark:text-gray-600"
-                                }`}
-                              />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                color="gold"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                              >
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21 12 17.27z" />
+                              </svg>
                             ))}
                           </div>
                         </div>
@@ -595,7 +598,7 @@ export default function Home() {
                           Bureaux
                         </h4>
                         <p className="text-gray-600 dark:text-gray-400 mt-1">
-                          Montréal–Canada, Dakar–Sénégal <br />
+                          Dakar–Sénégal <br />
                           Yaoundé, cameroun
                         </p>
                       </div>
@@ -618,7 +621,7 @@ export default function Home() {
                       </div>
                     </li>
 
-                    <li className="flex items-start gap-4">
+                    {/* <li className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-full bg-white dark:bg-neutral-800 shadow-sm flex items-center justify-center flex-shrink-0">
                         <Phone className="w-5 h-5 text-blue-600" />
                       </div>
@@ -633,7 +636,7 @@ export default function Home() {
                           +1 418 381 3722
                         </a>
                       </div>
-                    </li>
+                    </li> */}
                   </ul>
 
                   <div className="mt-8 pt-6 border-t border-gray-200 dark:border-neutral-800">

@@ -76,14 +76,14 @@ export default function Footer() {
                   info@digicombi.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
+              {/* <li className="flex items-start gap-3">
                 <div className="p-2 rounded-full bg-neutral-800">
                   <Phone className="w-4 h-4 text-blue-400" />
                 </div>
                 <a href="tel:+14183813722" className="mt-1 hover:text-white transition-colors duration-300">
                   +1 418 381 3722
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

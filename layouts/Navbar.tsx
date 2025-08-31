@@ -292,15 +292,7 @@ export default function Navbar() {
               );
             })}
 
-            <div className="flex items-center space-x-4 pt-4">
-              <select className="bg-transparent focus:outline-none cursor-pointer" defaultValue="fr">
-                <option value="fr">Français</option>
-                <option value="en">English</option>
-              </select>
-              <button className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                <Search className="w-5 h-5" />
-              </button>
-            </div>
+            
           </div>
         )}
       </div>
